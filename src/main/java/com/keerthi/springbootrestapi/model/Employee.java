@@ -20,7 +20,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    //@NotNull
     private String name;
 
 
@@ -30,7 +30,7 @@ public class Employee {
 
     private String email;
 
-    @NotNull
+    //@NotNull
     private String department;
 
     @CreationTimestamp
