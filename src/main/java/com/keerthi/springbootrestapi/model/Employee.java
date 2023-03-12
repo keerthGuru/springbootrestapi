@@ -7,8 +7,9 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
-import javax.validation.constraints.NotNull;
 
 @Setter
 @Getter
@@ -20,17 +21,18 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    //    @NotNull(message = "name should not be null")
+    @NotBlank(message = "Name should not be Null")
     private String name;
-
 
     private Long age = 0L;
 
     private String location;
 
+    @Email(message = "please enter valid email")
     private String email;
 
-    @NotNull
+    @NotBlank(message = "dept should not be Null")
     private String department;
 
     @CreationTimestamp
