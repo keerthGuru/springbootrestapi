@@ -29,6 +29,7 @@ public class Employee {
 
     private String location;
 
+    @NotBlank(message = "Email should not be Null")
     @Email(message = "please enter valid email")
     private String email;
 
